@@ -6,8 +6,7 @@ public class Main {
 		int T = sc.nextInt();
 		int C = sc.nextInt();
 		int P = sc.nextInt();
-		
-		int a = N-1;
+
 		System.out.println(((N-1)/T)*(C*P));
 	}
 }
