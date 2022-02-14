@@ -2,11 +2,11 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int L = sc.nextInt();	//방학 일수
-		int A = sc.nextInt();	//국어 페이지
-		int B = sc.nextInt();	//수학 페이지
-		int C = sc.nextInt();	//하루 최대 국어 페이지
-		int D = sc.nextInt();	//하루 최대 수학 페이지
+		int L = sc.nextInt();
+		int A = sc.nextInt();
+		int B = sc.nextInt();
+		int C = sc.nextInt();
+		int D = sc.nextInt();
 
 		int num = 0;
 		if(A/C >= B/D) {
