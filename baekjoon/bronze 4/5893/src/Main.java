@@ -7,7 +7,7 @@ public class Main {
 		
 		BigInteger b = new BigInteger(N,2);
 		
-		BigInteger c = new BigInteger("17");
+		BigInteger c = BigInteger.valueOf(17);
 		
 		BigInteger d = b.multiply(c);
 		
