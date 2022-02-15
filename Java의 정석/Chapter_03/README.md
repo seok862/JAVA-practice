@@ -54,9 +54,30 @@
 ## 형변환이란?
 
 - 변수 또는 상수의 타입을 다른 타입으로 변환하는 것
- 
->       (타입) 피연산자
->      double d = 85.4;
->      int score = (int)d;
->      int score = (int)85.4;
->      int score = 85;
+
+ ```java
+// (타입) 피연산자
+double d = 85.4;
+int score = (int)d;
+int score = (int)85.4;
+int score = 85;
+```
+
+## 자동 형변환
+
+```java
+float f = 1234;         //OK (int타입의 값을 float타입의 변수에 저장)
+
+float f = (float)1234;  //위 처럼 입력할 경우 컴파일러가 자동으로 (float)를 붙여서 형변환해줌
+
+int i = 3.14f           //에러. 큰 값을 작은 값에 저장할 수 없음
+
+int i = (int)3.14f      //OK. 컴파일러가 자동으로 형변환 시키지 못해 직접 입력해주어야함
+
+int i = 100;
+byte b = i;             //에러. int타입을 byte의 타입에 대입
+byte b = (byte)i;       //OK. byte타입으로 형변환하여 대입
+
+byte b = 1000;          //에러. byte 타입의 범위(-128 ~ 127)를 벗어난 값의 대입
+byte b = (byte)1000;    //OK. 그러나 값 손실이 발생해서 변수 b에는 -24가 저장됨
+```
