@@ -8,7 +8,7 @@ public class Main {
 			arr[i] = sc.nextInt();
 		}
 		if(N==0) {
-			System.out.println(0);
+			System.out.println("divide by zero");
 		} else
 		System.out.println("1.00");
 	}
