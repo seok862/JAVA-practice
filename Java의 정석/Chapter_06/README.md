@@ -211,3 +211,86 @@ int add (int a, int b)
     return result;      // 호출한 메서드로 결과를 반환한다.
 }
 ```
+
+## 메서드 호출
+
+```java
+    메서드 이름(값1, 값2, ...);     // 메서드를 호출하는 방법
+
+print99danAll();    // void print99danAll()을 호출
+int result = add(3, 5);     // int add(int x, int y)를 호출하고, 결과를 result에 저장
+
+```
+
+## return문
+- 실행 중인 메서드를 종료하고 호출한 곳으로 되돌아간다.
+
+## 호출스텍
+
+- 스택(stack) : 밑이 막힌 상자. 위에 차곡차곡 쌓인다.
+- 메서드 수행에 필요한 메모리가 제공되는 공간
+- 메서드가 호출되면 호출스택에 메모리 할당, 종료되면 해제
+
+## 기본형 매개변수
+
+- 기본형 매개변수 : 변수의 값을 읽기만 할 수 있다.(read only)
+- 참조형 매개변수 : 변수의 값을 읽고 변경할 수 있다.(read & write)
+
+## static 메서드와 인스턴스 메서드
+
+- 인스턴스 메서드
+
+1. 인스턴스 생성 후, '참조변수.메서드이름()'으로 호출
+2. 인스턴스 멤버(iv, im)와 관련된 작업을 하는 메서드
+3. 메서드 내에서 인스턴스 변수(iv) 사용 가능
+
+- static 메서드(클래스메서드)
+
+1. 객체생성없이 '클래스이름.메서드이름()'으로 호출
+2. 인스턴스 멤버(iv, im)와 관련없는 작업을 하는 메서드
+3. 메서드 내에서 인스턴스 변수(iv) 사용불가
+
+## static을 언제 붙여야 할까?
+
+- 속성(멤버 변수) 중에서 공통 속성에 static을 붙인다.
+
+```java
+class Card{
+    String kind;        // 무늬
+    int number;         // 숫자
+
+    static int width = 100;     // 폭
+    static int height = 250;    // 높이
+}
+```
+
+- 인스턴스 멤버(iv, im)을 사용하지 않는 메서드에 static을 붙인다.
+
+```java
+class MaMath2{
+    long a, b;
+
+    long add() {return a + b;}      // a, b는 인스턴스 변수
+    static long add(long a, long b) {return a + b;}    // a, b는 지역변수
+}
+```
+
+## 메서드 간의 호출과 참조
+- static 메서드는 인스턴스 변수(iv)를 사용할 수 없다.
+
+```java
+class TestClass2 {
+    int iv;         // 인스턴스 변수
+    static int cv;  // 클래스 변수
+
+    void instanceMethod(){      // 인스턴스 메서드
+        System.out.println(iv); // 인스턴스 변수를 사용할 수 있다.
+        System.out.println(cv); // 클래스 변수를 사용할 수 있다.
+    }
+
+    static void staticMethod(){ // static 메서드
+        System.out.println(iv); // 에러!! 인스턴스 변수를 사용할 수 없다.
+        System.out.println(cv); // 클래스 변수는 사용할 수 있다.
+    }
+}
+```
