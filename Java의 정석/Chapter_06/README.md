@@ -294,3 +294,118 @@ class TestClass2 {
     }
 }
 ```
+
+# 오버로딩(Overloading)
+- 한 클래스 안에 같은 이름의 메서드 여러 개 정의하는 것
+
+## 오버로딩이 성립하기 위한 조건
+
+- 메서드 이름이 같아야 한다.
+- 매개변수의 개수 또는 타입이 달라야한다.
+- 반환 타입은 영향없다.
+
+```java
+// 오버로딩 X, 1번만 만족
+int add(int a, int b) { return a+b; }
+int add(int x, int y) { return x+y; }
+
+// 오버로딩 X, 1번만 만족
+int add(int a, int b) { return a+b; }
+long add(int a, int b) { return (long)(x+y); }
+
+// 오버로딩 O, 1,2번 두개 다 만족
+int add(int a, long b) { return a+b; }
+int add(long a, int b) { return a+b; }
+
+```
+
+# 생성자
+
+- 인스턴스가 생성될 때마다 호출되는 '인스턴스 초기화 메서드'
+- 인스턴스 생성시 수행할 작업(iv 초기화)에 사용
+- 이름이 클래스의 이름과 같아야 한다.
+- 리턴값이 없다.(void 안붙임)
+
+```java
+class Card{
+    Card() {    // 매개변수 없는 생성자.
+        // 인스턴스 초기화 작업
+    }
+
+    Card(String kind, int number){  // 매개변수 있는 생성자
+        // 인스턴스 초기화 작업
+    }
+}
+```
+
+## 기본 생성자(default constructor)
+- 매개변수가 없는 생성자
+
+```java
+클래스이름(){}  // 기본 생성자
+Point(){}      // Point클래스의 기본 생성자
+```
+
+## 생성자this()
+- 생성자에서 다른 생성자 호출할 때 사용
+- 다른 생성자 호출시 첫 줄에서만 사용가능
+
+## 참조변수 this
+- 인스턴스 자신을 가리키는 참조변수
+- 인스턴스 메서드(생성자 포함)에서 사용가능
+- 지역변수(lv)와 인스턴스 변수(iv)를 구별할 때 사용
+- this가 있는것이 iv
+
+## 참조변수 this와 생성자 this()
+
+    this : 인스턴스 자신을 가리키는 참조변수. 인스턴스의 주소가 저장되어 있다.
+           모든 인스턴스메서드에 지역변수로 숨겨진 채로 존재한다.
+
+    this(), this(매개변수) : 생성자, 같은클래스의 다른 생성자를 호출할 때 사용한다.
+
+- 이 둘은 비슷하게 생겼을 뿐 완전히 다른것.
+
+# 변수의 초기화
+- 지역변수(lv)는 수동 초기화 해야함
+- 멤버변수(iv, cv)는 자동 초기화된다.
+
+```java
+class InitTest{
+    int x;      // 인스턴스 변수
+    int y = x;  // 인스턴스 변수
+
+    void method1(){
+        int i;      // 지역 변수
+        int j = i;  // 에러. 지역변수를 초기화하지 않고 사용
+    }
+
+}
+```
+
+## 멤버변수의 초기화
+
+- 명시적 초기화(=)
+
+```java
+class Car{
+    int door = 4;               // 기본형(primitive type) 변수의 초기화
+    Engine e = new Engine();    // 참조형(reference type) 변수의 초기화
+}
+```
+
+- 초기화 블럭
+1. 인스턴스 초기화 블럭 : {}
+2. 클래스 초기화 블럭 : static{}
+
+- 생성자
+```java
+Car(String color, String gearType, int door){
+    this.color = color;
+    this.gearType = gearType;
+    this.door = door;
+}
+```
+
+- 클래스 변수 초기화 시점 : 클래스가 처음 로딩될 때 단 한번
+- 인스턴스 변수 초기화 시점 : 인스턴스가 생성될 때 마다
+- 
