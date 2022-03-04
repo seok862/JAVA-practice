@@ -61,3 +61,44 @@ class Tv extends Object {
 ```
 - 모든 클래스는 Object클래스에 정의된 11개의 메서드를 상속받는다.<br>
 toString(), equals(Object obj), hashCode(),...
+
+# 오버라이딩(Overriding)
+- 상속받은 조상의 메서드를 자신에 맞게 변경하는 것
+
+```java
+class Point {
+    int x;
+    int y;
+
+    String getLocation(){
+        return "x :"  + x + ", y :" + y;
+    }
+}
+
+class Point #d extends Point{
+    int z;
+
+    String getLocation(){   // 오버라이딩
+        return "x :"  + x + ", y :" + y + ", z :" + z;
+    }
+}
+```
+
+## 오버라이딩의 조건
+1. 선언부가 조상클래스의 메서드와 일치해야 한다.
+2. 접근 제어자를 조상 클래스의 메서드보다 좁은 범위로 변경할 수 없다.
+3. 예외는 조상 클래스의 메서드보다 많이 선언할 수 없다.
+
+## 오버로딩 vs 오버라이딩
+
+    오버로딩(overloading)   기존에 없는 새로운 메서드를 정의하는 것(new)
+    오버라이딩(overriding)  상속받은 메서드의 내용을 변경하는 것(change, modify)
+
+# 참조변수 super
+- 객체 자신을 가리키는 참조변수. 인스턴스 메서드(생성자)내에만 존재
+- 조상의 멤버를 자신의 멤버와 구별할 때 사용
+
+# super() - 조상의 생성자
+- 조상의 생성자를 호출할 때 사용
+- 조상의 멤버는 조상의 생성자를 호출해서 초기화
+- 생성자의 첫 줄에 반드시 생성자를 호출해야 한다.
