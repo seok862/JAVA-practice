@@ -75,7 +75,7 @@ class Point {
     }
 }
 
-class Point #d extends Point{
+class Point3D extends Point{
     int z;
 
     String getLocation(){   // 오버라이딩
@@ -102,3 +102,41 @@ class Point #d extends Point{
 - 조상의 생성자를 호출할 때 사용
 - 조상의 멤버는 조상의 생성자를 호출해서 초기화
 - 생성자의 첫 줄에 반드시 생성자를 호출해야 한다.
+
+# 패키지(package)
+- 서로 관련된 클래스의 묶음
+- 클래스는 클래스 파일(*.class), 패키지는 폴더. 하위 패키지는 하위 폴더
+- 클래스의 실제 이름(full name)은 패키지를 포함.(java.lang.String)
+
+## 패키지 선언
+- 패키지는 소스파일의 첫 번째 문장으로 단 한번 선언
+- 같은 소스 파일의 클래스들은 모두 같은 패키지에 속하게 된다.
+- 패키지 선언이 없으면 이름없는(unnamed) 패키지에 속하게 된다.
+
+# import문
+- 클래스를 사용할 때 패키지이름을 생략할 수 있다.
+- 컴파일러에게 클래스가 속한 패키지를 알려준다.
+- java.lang패키지의 클래스는 import하지 않고도 사용할 수 있다.
+- import문을 선언하는 방법은 다음과 같다.
+
+```java
+import 패키지명.클래스명;
+// 또는
+import 패키지명.*;
+```
+
+- import문은 패키지문과 클래스선언의 사이에 선언한다.
+- import문은 컴파일 시에 처리되므로 프로그램의 성능에 영향이 없음
+- 이름이 같은 클래스가 속한 두 패키지를 import할 때는 클래스 앞에 패키지명을 붙여줘야 한다.
+
+## static import문
+- static멤버를 사용할 때 클래스 이름을 생략할 수 있게 해준다.
+
+# 제어자(modifier)
+- 클래스와 클래스의 멤버(멤버 변수, 메서드)에 부가적인 의미 부여
+
+> 접근제어자 : public, protected, (default), private <br>
+> 그     외 : static, final, abstract, native, transient, synchronized, volatile, strictfp
+
+- 하나의 대상에 여러 제어자를 같이 사용 가능(접근 제어자는 하나만)
+
