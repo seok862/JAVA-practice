@@ -21,7 +21,6 @@ public class Solution {
 						for(int l=0; l<M; l++) {
 							sum += arr[i+k][j+l];
 						}
-						
 					}
 					if(sum > max) {
 						max = sum;
@@ -29,10 +28,7 @@ public class Solution {
 				}
 			}
 			System.out.println("#"+t+" "+max);
-			
-			
-			
-			}
 		}
 	}
+}
 
