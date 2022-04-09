@@ -19,10 +19,7 @@ public class Solution {
 						break;
 					}		
 				}
-				
-			
 			}
-			
 		}
 	}
 }
