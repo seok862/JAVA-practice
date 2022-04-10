@@ -20,14 +20,12 @@ public class Solution {
 				
 				arr[i] = 0.35*first_test + 0.45*second_test + 0.2*assignment;
 			}
-			
+
 			for(int i=1; i<=N; i++) {
 				if(arr[i] > arr[K]) {
 					cnt++;
 				}
-				System.out.println(cnt);
 			}
-				
 			System.out.println("#"+t+" "+grade[cnt/(N/10)]);
 		}
 	}
