@@ -15,7 +15,7 @@ public class Solution {
 			Arrays.sort(arr);
 			
 			sum -= arr[0]+arr[9];
-			double ans = sum/8;
+			double ans = sum/(double)8;
 			System.out.println("#"+t+" "+Math.round(ans));
 		}
 	}
