@@ -23,7 +23,6 @@ public class Solution {
 			} else {
 				minu = arr[1]+arr[3];
 			}
-			
 			System.out.println("#"+t+" "+hour+" "+minu);
 		}
 	}
