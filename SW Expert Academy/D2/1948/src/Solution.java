@@ -7,9 +7,9 @@ public class Solution {
 		for(int t=1; t<=T; t++){
 			int[] arr = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 			
-			int a = sc.nextInt();
+			int a = sc.nextInt()-1;
 			int b = sc.nextInt();
-			int c = sc.nextInt();
+			int c = sc.nextInt()-1;
 			int d = sc.nextInt();
 			
 			int sum = 0;
