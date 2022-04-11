@@ -17,7 +17,6 @@ public class Solution {
 				}
 				else if(a == 2) {
 					speed -= sc.nextInt();
-					
 				}
 				
 				if(speed<0) speed = 0;
