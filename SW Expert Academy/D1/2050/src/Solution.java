@@ -4,8 +4,8 @@ public class Solution {
 		Scanner sc = new Scanner(System.in);
 		String str = sc.next();
 		for(int i=0; i<str.length(); i++) {
-			int a = str.charAt(i);
-			System.out.print(a-64+" ");
+			char a = str.charAt(i);
+			System.out.print(a-'A'+1+" ");
 		}
 	}
 }
