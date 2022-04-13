@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 public class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -6,19 +7,25 @@ public class Solution {
 		
 		for(int t=1; t<=T; t++) {
 			String str = sc.next();
-			if(str.length()/2 == 0) {
-					System.out.println("#"+t+" 0");
+			char[] arr = new char[str.length()];
+			char[] arr2 = new char[str.length()];
+			
+			boolean sign = false;
+			
+			for(int i=0; i<str.length(); i++) {
+				arr[i] = str.charAt(i);
+			}
+			
+			for(int i=0; i<str.length(); i++) {
+				arr2[i] = arr[(str.length()-1)-i];
+			}
+			
+			sign = Arrays.equals(arr, arr2);
+			
+			if(sign) {
+				System.out.println("#"+t+" "+1);
 			} else {
-				for(int j=0; j<str.length()/2; j++) {
-					if( str.charAt(j) == str.charAt(str.length()-(j+1))){
-						System.out.println("#"+t+" 1");
-						break;
-					}
-					else {
-						System.out.println("#"+t+" 0");
-						break;
-					}		
-				}
+				System.out.println("#"+t+" "+0);
 			}
 		}
 	}
