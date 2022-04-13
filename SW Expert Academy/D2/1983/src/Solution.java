@@ -4,16 +4,16 @@ public class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
-		String[] grade = {"A+", "A0", "A-", "B+", "B0", "B-", "C+", "C0", "C-", "D0"};
+		String[] grade = {"A+","A0","A-","B+","B0","B-","C+","C0","C-","D0"};
 		
-		for(int t=1; t<T; t++) {
+		for(int t=1; t<=T; t++) {
 			int N = sc.nextInt();
 			int K = sc.nextInt();
-			double[] arr = new double[N+1];
+			double[] arr = new double[N];
 			
 			int cnt = 0;
 			
-			for(int i=1; i<=N; i++) {
+			for(int i=0; i<N; i++) {
 				int first_test = sc.nextInt();
 				int second_test = sc.nextInt();
 				int assignment = sc.nextInt();
