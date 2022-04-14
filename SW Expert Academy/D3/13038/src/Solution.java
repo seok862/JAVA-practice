@@ -33,7 +33,7 @@ public class Solution {
 							break;
 						}
 					}
-					ans = cnt;
+					ans = Math.min(ans, cnt);
 				}
 			}
 			System.out.println("#"+t+" "+ans);
