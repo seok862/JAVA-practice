@@ -8,7 +8,7 @@ public class Solution {
 			double p = sc.nextDouble();
 			double q = sc.nextDouble();
 			
-			if(((1-p)*q) > (p*(1-q)*q)) {
+			if(((1-p)*q) < (p*(1-q)*q)) {
 				System.out.println("#"+t+" YES");
 			} else {
 				System.out.println("#"+t+" NO");
