@@ -11,8 +11,7 @@ public class Solution {
 			for(int i=0; i<N; i++) {
 				arr[i] = sc.nextInt();
 			}
-			
-			int num = 0;
+
 			int mix = 0;
 			int ans = 0;
 			int max = 0;
@@ -20,9 +19,8 @@ public class Solution {
 			String str;
 			
 			for(int i=0; i<N-1; i++) {
-				num = arr[i];
 				Loop1 : for(int j=1; j<N; j++) {
-					mix = num*arr[j];
+					mix = arr[i]*arr[j];
 					str = Integer.toString(mix);
 					
 					for(int k=0; k<str.length()-1; k++) {
