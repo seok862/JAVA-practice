@@ -16,7 +16,7 @@ public class Main {
 			if(arr[i] ==arr[i+1]-1) {
 				str = "ascending";
 			} else if(arr[i] == arr[i+1]+1) {
-				str = "decending";
+				str = "descending";
 			} else {
 				str = "mixed";
 				break;
@@ -24,6 +24,5 @@ public class Main {
 		}
 		
 		System.out.println(str);
-		
 	}
 }
