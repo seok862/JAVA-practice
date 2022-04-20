@@ -12,7 +12,6 @@ public class Main {
 		}
 		
 		int num = 0;
-		int ans = 0;
 		int max = 0;
 		
 		for(int i=0; i<N-2; i++) {
@@ -21,10 +20,8 @@ public class Main {
 					num = arr[i]+arr[j]+arr[k];
 					
 					if(num <= M) {
-						ans = num;
+						max = Math.max(num, max);
 					}
-					
-					max = Math.max(ans, max);
 				}
 			}
 		}
