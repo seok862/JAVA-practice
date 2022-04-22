@@ -32,7 +32,6 @@ public class Solution {
 			int minute = ans/60;
 			ans %= 60;
 			
-			
 			System.out.printf("#"+t+" %02d:%02d:%02d%n", hour, minute, ans);
 		}
 	}
