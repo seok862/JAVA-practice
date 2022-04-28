@@ -6,7 +6,6 @@ public class Main {
 		int N = sc.nextInt();
 		int M = sc.nextInt();
 		
-		int[][] arr = new int[N][M];
 		int[][] arr1 = new int[N][M];
 		int[][] arr2 = new int[N][M];
 		
