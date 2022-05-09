@@ -14,7 +14,7 @@ public class Solution {
 				
 				sum += p*x;
 			}
-			System.out.printf("%.6f",sum);
+			System.out.printf("#%d %.6f\n",t,sum);
 		}
 	}
 }
