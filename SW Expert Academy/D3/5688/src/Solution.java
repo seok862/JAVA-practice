@@ -6,7 +6,7 @@ public class Solution {
 		
 		for(int t=1; t<=T; t++) {
 			long N = sc.nextLong();
-			int num = 1;
+			long num = 1;
 			boolean check = false;
 			while(num*num*num <= N) {
 				if(num*num*num == N) {
