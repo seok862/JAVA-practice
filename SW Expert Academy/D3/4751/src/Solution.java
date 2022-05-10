@@ -41,11 +41,7 @@ public class Solution {
 					System.out.print("..#.");
 				}
 				System.out.println(".");
-				
-				
-			}
-			
-			
+			}			
 		}
 	}
 }
