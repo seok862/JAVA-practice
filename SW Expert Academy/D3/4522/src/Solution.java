@@ -8,22 +8,22 @@ public class Solution {
 		for(int t=1; t<=T; t++) {
 			String st = sc.next();
 			
+			int len = st.length();
+			
 			int left = 0;
-			int right = st.length()-1;
+			int right = len-1;
 			
 			String ans = "Exist";
 			
-			while(left<=right) {
-				if(st.charAt(left) == '?' || st.charAt(right) == '?') break;
-				
-				if(st.charAt(left++) != st.charAt(right--)) {
-					ans = "Not exist";	
-					break;
+			for(int i=0; i< len/2; i++) {
+				if(st.charAt(i) == '?' || st.charAt(len-1-i) == '?') continue;
+				if(st.charAt(i) != st.charAt(len-1-i)) {
+				ans = "Not exist";
+				break;
 				}
 			}
 			
 			System.out.println("#"+t+" "+ans);
 		}
-		
 	}
 }
