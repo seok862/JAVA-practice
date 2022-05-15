@@ -3,7 +3,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		int[][] arr = new int[101][101];
+		int[][] arr = new int[1001][1001];
 		
 		int N = sc.nextInt();
 		
