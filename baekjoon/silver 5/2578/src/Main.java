@@ -71,7 +71,7 @@ public class Main {
 					
 			}	
 			
-			if(ans == 3) {
+			if(ans >= 3) {
 				System.out.println((i+1));
 				break;
 			}
