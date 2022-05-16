@@ -31,7 +31,6 @@ public class Solution {
 							arr2[j] = 0;
 						}
 					}
-					
 				}
 			}
 			
