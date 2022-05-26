@@ -4,70 +4,71 @@ public class Solution {
 		Scanner sc = new Scanner(System.in);
 		
 		for(int t=1; t<=10; t++) {
-			sc.nextInt();
-			
-			for(int len = 50; len>=0; len++) {
-				
-			
+			int T = sc.nextInt();
 			
 			String[][] arr = new String[100][100];
 			
 			for(int i=0; i<100; i++) {
 				String st = sc.next();
-				
 				for(int j=0; j<100; j++) {
 					arr[i][j] = st.substring(j, j+1);
 				}
 			}
 			
-			int cnt = 0;
-			
-			for(int i=0; i<100; i++) {
+			int ans = 0;
+			int max = 0;
+			for(int N=100; N>=0; N--) {
 				
-				for(int j=0; j<=100-len; j++) {
-					boolean check = true;
-					
-					int left = j;
-					int right = j+len-1;
-					
-					while(left<right) {
-						if(!arr[i][left].equals(arr[i][right])) {
-							check = false;
-							break;
-						}
-						left++;
-						right--;
-					}
-					
-					if(check) {
-						cnt++;
-					}
-				}
-			}
-			
-			for(int i=0; i<100; i++) {
-				
-				for(int j=0; j<=100-len; j++) {
-					boolean check = true;
-					int left = j;
-					int right = j+len-1;
-					
-					while(left<right) {
-						if(!arr[left][i].equals(arr[right][i])) {
-							check = false;
-							break;
+				for(int i=0; i<100; i++) {
+					for(int j=0; j<100-N+1; j++) {
+						
+						boolean check = true;
+						int lt = j;
+						int rt = j+N-1;
+						
+						while(lt<rt) {
+							if(!arr[i][lt].equals(arr[i][rt])) {
+								check = false;
+								break ;
+							}
+							
+							lt++;
+							rt--;
+							
 						}
 						
-						left++;
-						right--;
+						if(check) ans = N;
+						
+						max = Math.max(ans, max);
 					}
-					
-					if(check) cnt++;
+				}
+				
+				for(int i=0; i<100; i++) {
+					for(int j=0; j<100-N+1; j++) {
+						
+						boolean check = true;
+						int lt = j;
+						int rt = j+N-1;
+						
+						while(lt<rt) {
+							if(!arr[lt][i].equals(arr[rt][i])) {
+								check = false;
+								break ;
+							}
+							
+							lt++;
+							rt--;
+							
+						}
+						
+						if(check) ans = N;
+						
+						max = Math.max(ans, max);
+					}
 				}
 			}
 			
-			System.out.println("#"+t+" "+cnt);
-		}
+			System.out.println("#"+t+" "+max);
 		}
 	}
 }
