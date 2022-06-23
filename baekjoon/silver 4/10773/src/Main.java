@@ -16,9 +16,9 @@ public class Main {
 			}
 		}
 		
-		System.out.println(stack.size());
 		int sum = 0;
 		int num = stack.size();
+		
 		for(int i=0; i<num; i++) {
 			sum += stack.pop();
 			
