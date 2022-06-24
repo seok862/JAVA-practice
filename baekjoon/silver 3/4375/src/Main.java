@@ -1,5 +1,4 @@
 import java.util.*;
-import java.math.*;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -10,9 +9,8 @@ public class Main {
 			
 			for(int i=1; ; i++) {
 				prev = (prev*10+1)%num;
-				System.out.println(prev);
 				if(prev == 0) {
-					System.out.println("i: "+i);
+					System.out.println(i);
 					break;
 				}
 			}
