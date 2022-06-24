@@ -13,16 +13,12 @@ public class Main {
 			
 			boolean flag = false;
 			
-			
-			
-			for(int i=x; i<=40001; i+=N) {				
+			for(int i=x; i<M*N; i+=N) {				
 				if(i%M == y) {
 					System.out.println(i+1);
 					flag = true;
 					break;
-				} 
-				
-				
+				}	
 			}
 			
 			if(!flag) System.out.println(-1);
