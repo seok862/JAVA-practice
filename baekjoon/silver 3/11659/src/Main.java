@@ -9,7 +9,6 @@ public class Main {
 		
 		int[] sum = new int[N+1];
 		
-		
 		for(int i=1; i<N+1; i++) {
 			sum[i] = sum[i-1] + sc.nextInt();
 		}
