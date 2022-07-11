@@ -1,24 +1,24 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
-public class Main {
+import java.util.*;
+
+public class Main{
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		Queue<Integer> queue = new LinkedList<Integer>();
+		Queue<Integer> q = new LinkedList<>();
 		
 		int N = sc.nextInt();
 		
-		for(int i=1; i<=N; i++) {
-			queue.add(i);
+		for(int i=1; i<N+1; i++) {
+			q.add(i);
 		}
 		
-		for(int i=0; i<N-1; i++) {
-			queue.poll();
-			queue.add(queue.poll());
+		while(q.size()>1) {
+			int n = q.poll();
+			
+			q.add(q.poll());			
 		}
 		
-		System.out.println(queue.peek());
-		
+		System.out.println
+		(q.poll());
 	}
 }
