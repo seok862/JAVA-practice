@@ -1,21 +1,23 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		
-		int N = sc.nextInt();
+	public static void main(String[] args) throws IOException {
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		int N = Integer.parseInt(br.readLine());
 		
 		int[] arr = new int[N];
 		
 		for(int i=0; i<N; i++) {
-			arr[i] = sc.nextInt();
+			arr[i] = Integer.parseInt(br.readLine());
 		}
 		
 		Arrays.sort(arr);
 		
 		for(int i=0; i<N; i++) {
-			System.out.println(arr[i]);
+			sb.append(arr[i]).append('\n');
 		}
+		
+		System.out.println(sb);
 	}
 }
